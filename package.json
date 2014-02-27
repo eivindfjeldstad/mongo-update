@@ -1,7 +1,7 @@
 {
   "name": "mongo-update",
   "version": "0.0.1",
-  "description": "Get object diff as a MongoDB update query",
+  "description": "Get object diffs as MongoDB update queries",
   "main": "index.js",
   "scripts": {
     "test": "make test"
