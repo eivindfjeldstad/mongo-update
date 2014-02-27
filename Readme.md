@@ -1,7 +1,7 @@
 
 # mongo-update
 
-Get object diffs as MongoDB update queries. Useful for reducing the size of your queries.
+Diff two objects and return a MongoDB update query. Useful for reducing the size of your queries.
 
 Uses [cloudup/mongo-eql](https://github.com/cloudup/mongo-eql) to compare values and
 and [cloudup/mongo-minify](https://github.com/cloudup/mongo-minify) to optionally filter

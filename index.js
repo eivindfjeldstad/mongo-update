@@ -3,7 +3,7 @@ var is = require('component-type');
 var eql = require('mongo-eql');
 
 /**
- * Get object diff as a MongoDB update query
+ * Diff two objects and return a MongoDB update query
  *
  * @param {Object} a
  * @param {Object} b
