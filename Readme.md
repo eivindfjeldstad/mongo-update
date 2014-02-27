@@ -1,5 +1,5 @@
 
-# mongo-query
+# mongo-update
 
 Get object diff as a MongoDB update query. Useful for reducing the size of your queries.
 
