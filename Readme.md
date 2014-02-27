@@ -16,7 +16,7 @@ out disallowed operations.
 ```js
 var update = require('mongo-update');
 var query = update({ a: 'hello' }, { b: 'world' });
-// => { $set: { b: 'hello' }, $unset: { a: 1 }}
+// => { $set: { b: 'world' }, $unset: { a: 1 }}
 ```
 
 Or with a filter (see [cloudup/mongo-minify](https://github.com/cloudup/mongo-minify) for more examples)
