@@ -1,0 +1,22 @@
+{
+  "name": "mongo-update",
+  "version": "0.0.1",
+  "description": "Get object diff as a MongoDB update query",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "component-type": "~1.0.0",
+    "mongo-eql": "~0.1.0",
+    "mongo-minify": "~0.1.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eivindfjeldstad/mongo-update.git"
+  }
+}
