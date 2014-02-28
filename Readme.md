@@ -25,7 +25,7 @@ var query = update({ a: 1, b: 2 }, { a: 2, b: 3 }, { a: 1 });
 // => { $set: { a: 2 }}
 ```
 
-## Note about arrays
+## Note on arrays
 By default, arrays will not diffed. This is not ideal when dealing with nested documents.
 Instead of trying to implement a complex diffing solution for these cases, `mongo-update`
 allows you to define a prefix on your queries.
