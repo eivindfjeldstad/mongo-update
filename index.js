@@ -17,8 +17,9 @@ module.exports = function (a, b, filter, prefix) {
   var ret = {};
   
   if (typeof filter == 'string') {
+    var tmp = prefix;
     prefix = filter;
-    filter = {};
+    filter = tmp;
   }
   
   if (prefix) {

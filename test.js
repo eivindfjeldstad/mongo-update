@@ -53,4 +53,18 @@ describe('query()', function () {
       assert(!('prefix.$.b' in query.$set));
     });
   })
+  
+  describe('when given a prefix and a filter', function () {
+    it('should prefix all keys in the filter', function () {
+      var query = diff({ a: 1, b: 2 }, { a: 2, b: 3 }, { a: 1 }, 'prefix.$');
+      assert(query.$set['prefix.$.a'] == 2);
+      assert(!('prefix.$.b' in query.$set));
+    });
+    
+    it('should accept them in any order', function () {
+      var query = diff({ a: 1, b: 2 }, { a: 2, b: 3 }, 'prefix.$', { a: 1 });
+      assert(query.$set['prefix.$.a'] == 2);
+      assert(!('prefix.$.b' in query.$set));
+    });
+  })
 })
