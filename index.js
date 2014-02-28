@@ -8,14 +8,29 @@ var eql = require('mongo-eql');
  * @param {Object} a
  * @param {Object} b
  * @param {Object} [filter]
+ * @param {String} [prefix]
  * @return {Object}
  * @api public
  */
 
-module.exports = function (a, b, filter) {
+module.exports = function (a, b, filter, prefix) {
   var ret = {};
+  
+  if (typeof filter == 'string') {
+    prefix = filter;
+    filter = {};
+  }
+  
+  if (prefix) {
+    for (var key in filter) {
+      filter[join(key, prefix)] = prefix[key];
+      delete prefix[key];
+    }
+  }
+  
   filter = filter || {};
-  diff(a, b, ret);
+  diff(a, b, ret, prefix);
+  
   return minify(ret, filter);
 }
 
