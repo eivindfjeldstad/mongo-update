@@ -35,7 +35,7 @@ var child = { age: 10 };
 var parent = { children: [child] };
 
 var query = update(child, { age: 20 }, 'children.$');
-// => { $set: { 'child.$.name': 'something' }}
+// => { $set: { 'child.$.age': 20 }}
 
 db.update({ 'child.age': 10 }, query);
 ```
