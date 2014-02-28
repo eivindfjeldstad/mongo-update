@@ -24,18 +24,14 @@ module.exports = function (a, b, filter) {
  */
 
 function diff (a, b, query, prefix) {
-  // find removed keys
-  for (var key in a) {
-    var path = join(key, prefix);
-    if (b[key] == null) unset(query, path);
-  }
-  
-  // find changed keys
   for (var key in b) {
     var path = join(key, prefix);
     
     // removed
-    if (b[key] == null) continue;
+    if (b[key] == null) {
+      unset(query, path);
+      continue;
+    }
     
     // no change
     if (eql(a[key], b[key])) continue;

@@ -14,8 +14,14 @@ describe('query()', function () {
     assert(!('$set' in query));
   });
   
+  it('should not $unset missing keys', function () {
+    var query = diff({ a: 1 }, {});
+    assert(!('$set' in query));
+    assert(!('$unset' in query));
+  });
+  
   it('should work with nested keys', function () {
-    var query = diff({ a: { b: 1, c: 2 }}, { a: { b: 2 }});
+    var query = diff({ a: { b: 1, c: 2 }}, { a: { b: 2, c: null }});
     assert(query.$set['a.b'] == 2);
     assert(query.$unset['a.c'] == 1);
   });
@@ -28,7 +34,7 @@ describe('query()', function () {
     });
     
     it('should work with nested keys', function () {
-      var query = diff({ a: { b: 1, c: 2 }}, { a: { b: 2 }}, { 'a.b': 1 });
+      var query = diff({ a: { b: 1, c: 2 }}, { a: { b: 2, c: null }}, { 'a.b': 1 });
       assert(query.$set['a.b'] == 2);
       assert(!('$unset' in query));
     });

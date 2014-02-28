@@ -15,7 +15,7 @@ out disallowed operations.
 
 ```js
 var update = require('mongo-update');
-var query = update({ a: 'hello' }, { b: 'world' });
+var query = update({ a: 'hello' }, { b: 'world', a: null });
 // => { $set: { b: 'world' }, $unset: { a: 1 }}
 ```
 
