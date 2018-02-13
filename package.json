@@ -1,6 +1,6 @@
 {
   "name": "mongo-update",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Diff two objects and return a MongoDB update query",
   "main": "index.js",
   "scripts": {
