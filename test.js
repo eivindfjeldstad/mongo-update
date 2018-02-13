@@ -10,7 +10,7 @@ describe('query()', function () {
   
   it('should $unset null-ish keys', function () {
     var query = diff({ a: 1 }, { a: null });
-    assert(query.$unset.a == 1);
+    assert(query.$unset.a == '');
     assert(!('$set' in query));
   });
   
@@ -23,7 +23,7 @@ describe('query()', function () {
   it('should work with nested keys', function () {
     var query = diff({ a: { b: 1, c: 2 }}, { a: { b: 2, c: null }});
     assert(query.$set['a.b'] == 2);
-    assert(query.$unset['a.c'] == 1);
+    assert(query.$unset['a.c'] == '');
   });
   
   describe('when given a filter', function () {

@@ -84,7 +84,7 @@ function set (query, field, val) {
 
 function unset (query, field) {
   query['$unset'] = query['$unset'] || {};
-  query['$unset'][field] = 1;
+  query['$unset'][field] = '';
 };
 
 /**
