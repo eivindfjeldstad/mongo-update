@@ -1,6 +1,8 @@
 
 # mongo-update
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/eivindfjeldstad/mongo-update.svg)](https://greenkeeper.io/)
+
 Diff two objects and return a MongoDB update query. Useful for reducing the size of your queries.
 
 Uses [cloudup/mongo-eql](https://github.com/cloudup/mongo-eql) to compare values and
