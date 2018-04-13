@@ -8,12 +8,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "component-type": "~1.0.0",
-    "mongo-eql": "~0.1.0",
+    "component-type": "~1.2.1",
+    "mongo-eql": "~1.0.0",
     "mongo-minify": "~0.1.1"
   },
   "devDependencies": {
-    "mocha": "~1.17.1"
+    "mocha": "~5.1.0"
   },
   "repository": {
     "type": "git",
